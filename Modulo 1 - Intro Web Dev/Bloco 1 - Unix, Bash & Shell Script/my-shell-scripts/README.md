@@ -1,4 +1,4 @@
-Exercícios - Shell Script
+# Exercícios - Shell Script
 
 1. Escreva um Shell Script que imprima na tela a frase: "Shell Script é demais!";
 
