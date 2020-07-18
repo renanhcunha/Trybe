@@ -2,21 +2,27 @@ let a = 10;
 let b = 5;
 
 //Addition
-sum = a + b;
-console.log("a + b = " + sum);
+function sum(num1, num2) {
+  return num1 + num2;
+}
 
 //Subtraction
-sub = a - b;
-console.log("a - b = " + sub);
+function sub(num1, num2) {
+  return num1 - num2;
+}
 
 //Multiplication
-multi = a * b;
-console.log("a * b = " + multi);
+function multi(num1, num2) {
+  return num1 * num2;
+}
 
 //Division
-div = a / b;
-console.log("a / b = " + div);
+function div(num1, num2) {
+  return num1 / num2;
+}
 
 //Module
-mod = a % b;
-console.log("a % b = " + mod);
+function mod(num1, num2) {
+  return num1 % num2;
+}
+
