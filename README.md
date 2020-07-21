@@ -16,7 +16,23 @@ The program has more than **1,500 hours** of classroom and online classes and co
 - [x] 2-3: *Internet - Understanding how it works*
 ##### Block 3: Introduction - HTML & CSS
 - [x] 3-1: *HTML & CSS - Page structures*
-- [ ] 3-2: *HTML & CSS - Getting Started with CSS*
-- [ ] 3-3: *HTML & CSS - Selectors and positioning*
-- [ ] 3-4: *Semantic HTML*
-- [ ] 3-5: *Project - HTML & CSS*
+- [x] 3-2: *HTML & CSS - Getting Started with CSS*
+- [x] 3-3: *HTML & CSS - Selectors and positioning*
+- [x] 3-4: *Semantic HTML*
+- [x] 3-5: *Project - HTML & CSS*
+##### Block 4: Introduction - JavaScript part 1
+- [x] 4-1: *JavaScript - Getting Started*
+- [x] 4-2: *JavaScript - For Array and Loop*
+- [x] 4-3: *JavaScript - Programming Logic and Algorithms*
+- [x] 4-4: *JavaScript - Objects and functions*
+- [x] 4-5: *Project - Playground Functions*
+##### Block 5: JavaScript part 2 + Projects
+- [x] 5-1: *JavaScript - DOM and selectors*
+- [ ] 5-2: *JavaScript - Working with elements*
+- [ ] 5-3: *JavaScript - Events*
+- [ ] 5-4: *JavaScript - Web Storage*
+- [ ] 5-5: *Project - Meme Generator*
+- [ ] 5-6: *Project - Art with Pixels*
+- [ ] 5-7: *Project - To Do List*
+- [ ] 5-8: *Project - Guess the Color*
+- [ ] 5-9: *Project - Mysterious Card*
