@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- creating the squares and columns divs -->
+<div id="stack">
+	<div class="column_left"> 
+		<div>
+        	<div>	
+			</div>
+    	</div>
+    	<div>
+        	<div></div>
+    	</div>
+ 	</div>
+ 	<div class="column_right">
+    	<div>
+        	<div>	
+			</div>
+    	</div>
+    	<div>
+        	<div>
+			</div>
+    	</div>
+  	</div>
+</div>
+<style>
+
+
+
+#stack{
+	height:20rem;
+	width:20rem;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:center;
+	border: solid black 4px;
+}
+
+.column_left, .column_right{
+	
+    height:18rem;
+	width:8rem;
+    margin:auto;
+	display:flex;
+	flex-direction:column;
+    justify-content:space-evenly;
+    border: solid black 4px;
+    }
+.column_left>div, .column_right>div{
+	height:5rem;
+	width:5rem ;
+	display:flex;
+	align-items:center;
+    justify-content:center;
+    margin:auto;
+    border: solid black 4px;
+}  
+
+div>div>div>div{
+    height:2.5rem;
+	width:2.5rem; 
+    border: solid black 4px;
+}
+
+
+
+</style>
+<script>
+
+var stack = document.getElementById('stack');
+stack.style.backgroundColor = 'red';
+
+var left = document.getElementsByClassName('column_left')[0];
+left.style.backgroundColor = 'blue';
+var right = document.getElementsByClassName('column_right')[0];
+right.style.backgroundColor = 'green';
+
+var leftSup = document.querySelectorAll('.column_left> div')[0];
+leftSup.style.backgroundColor = 'violet';
+var leftInf = document.querySelectorAll('.column_left> div')[1];
+leftInf.style.backgroundColor = 'violet';
+var rightSup = document.querySelectorAll('.column_right> div')[0];
+rightSup.style.backgroundColor = 'purple';
+var rightInf = document.querySelectorAll('.column_right> div')[1];
+rightInf.style.backgroundColor = 'purple';
+
+var miniLeftSup = document.querySelectorAll('div>div>div>div')[0];
+miniLeftSup.style.backgroundColor = 'pink';
+var miniRightSup = document.querySelectorAll('div>div>div>div')[2];
+miniRightSup.style.backgroundColor = 'pink';
+var miniLeftInf = document.querySelectorAll('div>div>div>div')[1];
+miniLeftInf.style.backgroundColor = 'orange';
+var miniRightInf = document.querySelectorAll('div>div>div>div')[3];
+miniRightInf.style.backgroundColor = 'orange';
+
+</script>
+
+</body>
+</html>
