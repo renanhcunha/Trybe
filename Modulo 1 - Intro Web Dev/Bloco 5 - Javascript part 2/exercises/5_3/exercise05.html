@@ -24,21 +24,55 @@ Call that function every 50 milliseconds. Your cat should now be moving across t
     let step = 0;
     let isWalkingRight = true;
 
-    function catWalk() {
-      catPosition = parseInt(catImage.style.left);
-      if (catPosition > catFinalPosition) {
-        isWalkingRight = false;
+    function catDance() {
+      let string = 'https://i.pinimg.com/originals/cf/29/18/cf2918326b0f9666ce97f72db36ede28.gif';
+      if (catImage.src === string) {
+        return;
       }
-      if (catPosition < 0 - catImage.width) {
-        isWalkingRight = true;
+      catImage.src = string;
+    }
+
+    function catBackWalk() {
+      let string = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+      if (catImage.src === string) {
+        return;
       }
+      catImage.src = string;
       if (isWalkingRight) {
-        step += 10;
-        catImage.style.left = step + 'px';
+          step += 10;
+          catImage.style.left = step + 'px';
       } 
       if (!isWalkingRight) {
         step -= 10;
         catImage.style.left = step + 'px';
+      }
+      catWalk();
+    }
+
+    function catWalk() {
+      catPosition = parseInt(catImage.style.left);
+      if (catPosition === catFinalPosition / 2) {
+        catDance();
+        step = catFinalPosition / 2;
+        catImage.style.left = step + 'px';
+        window.setTimeout(catBackWalk, 10000);
+
+      } else {
+     
+        if (catPosition > catFinalPosition) {
+          isWalkingRight = false;
+        }
+        if (catPosition < 0 - catImage.width) {
+          isWalkingRight = true;
+        }
+        if (isWalkingRight) {
+          step += 10;
+          catImage.style.left = step + 'px';
+        } 
+        if (!isWalkingRight) {
+          step -= 10;
+          catImage.style.left = step + 'px';
+        }
       }
     }
     window.setInterval(catWalk, 50);
