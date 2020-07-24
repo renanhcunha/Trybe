@@ -19,9 +19,18 @@ Call that function every 50 milliseconds. Your cat should now be moving across t
   <script>
     let catImage = document.body.firstElementChild;
     catImage.style.left = '0px';
+    let catPosition;
+    let catFinalPosition = window.innerWidth;
     let step = 0;
 
     function catWalk() {
+      catPosition = parseInt(catImage.style.left);
+      console.log(catPosition);
+      if (catPosition >= catFinalPosition) {
+        step = 0;
+        catImage.style.left = step + 'px';
+        return;
+      }
       step += 10;
       catImage.style.left = step + 'px';
     }
