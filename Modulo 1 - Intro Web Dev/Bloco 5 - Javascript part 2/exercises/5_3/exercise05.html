@@ -46,14 +46,15 @@ Call that function every 50 milliseconds. Your cat should now be moving across t
         step -= 10;
         catImage.style.left = step + 'px';
       }
-      catWalk();
     }
 
     function catWalk() {
       catPosition = parseInt(catImage.style.left);
-      if (catPosition === catFinalPosition / 2) {
+      console.log(catPosition);
+      let mid = (catFinalPosition / 2) - 150;
+      if (catPosition === mid) {
         catDance();
-        step = catFinalPosition / 2;
+        step = mid;
         catImage.style.left = step + 'px';
         window.setTimeout(catBackWalk, 10000);
 
