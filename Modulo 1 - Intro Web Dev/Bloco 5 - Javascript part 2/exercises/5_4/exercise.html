@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 40%;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    button {
+      display: block;
+      margin: auto;
+    }
+
+    .box {
+      display: block;
+      width: 60%;
+      text-align: center;
+      margin: 40px auto 0 auto;
+    }
+
+    input {
+      display: inline-block;
+      width: 30%;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 20px;
+    }
+
+    .box input {
+      float: right;
+      clear: both;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conteúdo aleatório</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan semper leo, id tempus ante luctus ut. Maecenas consequat tincidunt urna et maximus. Integer quis erat vitae elit sagittis facilisis sed a mi. Donec eu dolor faucibus risus tristique finibus at sed elit. Donec sagittis ex eu odio sodales, vel luctus erat pellentesque. Sed elementum dignissim sem, nec cursus lectus. Etiam pulvinar eleifend lectus, non consequat justo varius eget. Nam hendrerit pulvinar eros id ullamcorper.
+    </p>
+
+    <div class="box">
+      <label for="">Escolha a cor de fundo: </label>
+      <input id="backgroundColor" type="text"><br>
+      <label for="">Escolha a cor de texto: </label>
+      <input id="fontColor" type="text"><br>
+      <label for="">Escolha o tamanho de fonte: </label>
+      <input id="fontSize" type="text"><br>
+      <label for="">Escolha o espaçamento entre as linhas: </label>
+      <input id="lineHeight" type="text"><br>
+      <label for="">Escolha o tipo da fonte: </label>
+      <input id="fontFamily" type="text">
+    </div>
+
+    <button onclick="clearLocalStorage()">Limpar LocalStorage</button>
+  </div>
+
+  <script>
+    let content = document.querySelector('.container');
+
+    document.body.style.backgroundColor = localStorage.getItem('background-color');
+    content.style.color = localStorage.getItem('font-color');
+    content.style.fontSize = localStorage.getItem('font-size');
+    content.style.lineHeight = localStorage.getItem('line-height');
+    content.style.fontFamily = localStorage.getItem('font-family');
+
+    function clearLocalStorage() {
+      localStorage.clear();
+    }
+    
+    document.getElementById('backgroundColor').addEventListener('blur', function(event) {
+      let color = event.target.value;
+      document.body.style.backgroundColor = color;
+      localStorage.setItem('background-color', color);
+    })
+
+    document.getElementById('fontColor').addEventListener('blur', function(event) {
+      let color = event.target.value;
+      content.style.color = color;
+      localStorage.setItem('font-color', color);
+    })
+
+    document.getElementById('fontSize').addEventListener('blur', function(event) {
+      let size = event.target.value + 'px';
+      content.style.fontSize = size;
+      localStorage.setItem('font-size', size);
+    })
+
+    document.getElementById('lineHeight').addEventListener('blur', function(event) {
+      let lineHeight = event.target.value + 'px';
+      content.style.lineHeight = lineHeight;
+      localStorage.setItem('line-height', lineHeight);
+    })
+
+    document.getElementById('fontFamily').addEventListener('blur', function(event) {
+      let fontFamily = event.target.value;
+      content.style.fontFamily = fontFamily;
+      localStorage.setItem('font-family', fontFamily);
+    })
+
+  </script>
+</body>
+</html>
