@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/pikaday.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="script.js" defer></script>
+  <script src="js/just-validate.js" defer></script>
+  <script src="js/pikaday.js" defer></script>
+  <script src="js/script.js" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -93,9 +96,9 @@
         </div>
     </div>
     <div class="field">
-      <label class="label" for="data">Data de Início:</label>
+      <label class="label" for="datepicker">Data de Início:</label>
         <div class="control">
-          <input class="input" type="text" id="data" name="data" placeholder="dd/mm/aaaa" onblur="verifyDate(event)" required>
+          <input class="input" type="text" id="datepicker" name="data" placeholder="dd/mm/aaaa" onblur="verifyDate(event)" required>
         </div>
     </div>
     <div class="field">
