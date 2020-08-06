@@ -3,12 +3,72 @@ window.onload = function() {
     field: document.getElementById('datepicker'),
     onSelect: function(date) {
       console.log(date);
-} });
-  
-}
+    }
+  });
 
-let dateValidation = false;
-const myForm = document.querySelector('#my-form');
+  new window.JustValidate('.my-form', {
+    rules: {
+      name: {
+        required: true,
+        maxLength: 40
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      cpf: {
+        required: true,
+      },
+      endereco: {
+        required: true,
+      },
+      cidade: {
+        required: true,
+      },
+      estado: {
+        required: true,
+      },
+      tipo: {
+        required: true,
+      },
+      curriculo: {
+        required: true,
+      },
+      cargo: {
+        required: true,
+      },
+      desCargo: {
+        required: true,
+      },
+      data: {
+        required: true,
+      },
+    },
+    messages: {
+      name: {
+        required: 'O campo nome é obrigatório',
+        maxLength: 'O campo excede o máximo de 40 caracteres',
+      },
+      email: {
+        required: 'O campo email é obrigatório',
+        email: 'O campo digitado é inválido'
+      },
+      cpf: 'O campo CPF é obrigatório',
+      endereco: 'O campo de endereço é obrigatório',
+      cidade: 'O campo Cidade é obrigatório',
+      estado: 'O campo Estado é obrigatório',
+      tipo: 'O campo Tipo de moradia é obrigatório',
+      curriculo: 'O campo de Resumo do currículo é obrigatório',
+      cargo: 'O campo Cargo é obrigatório',
+      desCargo: 'O campo Descrição do cargo é obrigatório',
+      data: 'O campo Data de início é obrigatório',
+    },
+
+    submitHandler: function (form, values, ajax) {
+      console.log(form, values);
+    },
+  });
+}
 
 function getEstados() {
   const selectEstados = document.querySelector('#estado');
@@ -16,45 +76,8 @@ function getEstados() {
   for (let index in estados) {
     const estado = document.createElement('option');
     estado.innerText = estados[index];
+    estado.value = estados[index];
     selectEstados.appendChild(estado);
-  }
-}
-
-function verifyDate(event) {
-  let date = event.target.value;
-  let splitDate = date.split('/');
-  let day = splitDate[0];
-  let month = splitDate[1];
-  let year = splitDate[2];
-  let dateMsg = '';
-  dateValidation = false;
-  if (!year || day.length !== 2 || month.length !== 2 || year.length !== 4) {
-    dateMsg += 'Formato da data incorreto! O formato deve ser dd/mm/aaaa';
-    return dateMsg;
-  } else if (day < 1 || day > 31) {
-    dateMsg += 'Erro: o dia da data de início deve estar entre os valores 01 e 31! ';
-    return dateMsg;
-  } else if (month < 1 || month > 12 ) {
-    dateMsg += 'Erro: o mês da data de início deve estar entre os valores 01 e 12! ';
-    return dateMsg;
-  } else if (year < 0 ) {
-    dateMsg += 'Erro: o ano da data de início não pode ser negativo!';
-    return dateMsg;
-  }  
-  dateValidation = true;
-}
-
-function preventDef(event) {
-  event.preventDefault();
-  for (let i = 0; i < myForm.elements.length; i += 1){
-    if (myForm.elements[i].tagName !== 'FIELDSET' && myForm.elements[i].tagName !== 'BUTTON') {
-      let elementDiv = document.createElement('div');
-      elementDiv.innerHTML = myForm.elements[i].name + ' : ' + myForm.elements[i].value;
-      document.body.appendChild(elementDiv);
-    }
-  }
-  if (dateValidation !== true && dateMsg !== '') {
-    alert(dateMsg);
   }
 }
 
