@@ -1,0 +1,49 @@
+body {
+  font-size: 1.5em;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+.content-container p {
+  text-align: justify;
+  /* word-break: break-all; */
+}
+
+.content-container > h1,h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image-container figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.image-container img {
+  margin: 20px;
+  max-width: 100%;
+}
+
+.image-container figcaption {
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: seagreen;
+  }
+}
