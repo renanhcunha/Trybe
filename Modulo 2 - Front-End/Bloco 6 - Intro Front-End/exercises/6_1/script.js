@@ -43,7 +43,14 @@ function verifyDate(event) {
 function preventDef(event) {
   event.preventDefault();
   let formDiv = document.createElement('div');
+  console.log(myForm.elements)
+  // let allElements = document.querySelectorAll('select');
+  for (let i = 0; i < myForm.length; i =+ 1){
+    console.log(myForm[i].value);
+  }
+  console.log(allElements);
   formData = new FormData(myForm);
+
   let name = {
     'Nome Completo:' : formData.get('name'), 
     'Email:' : formData.get('email'),
