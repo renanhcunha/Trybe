@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: seagreen;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+form , fieldset {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+fieldset div {
+  margin-bottom: 15px;
+}
+
+fieldset input[type="radio"] {
+  margin-left: 10px;
+}
+
+button {
+  background-color: darkgray;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 5px;
+  padding: 4px;
+}
