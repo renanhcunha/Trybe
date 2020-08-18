@@ -68,10 +68,7 @@ const expected_result = false
 // Faça uma função que retorne true, se todas as pessoas autoras nasceram no século XX, ou false, caso contrário.
 
 function everyoneWasBornOnSecXX() {
-  return books.every(element => {
-    const birthYear = element.author.birthYear;
-    birthYear > 1900 && birthYear < 2000
-  });
+  return books.every(book => book.author.birthYear > 1900 && book.author.birthYear < 2000);
 }
 
 assert.equal(everyoneWasBornOnSecXX(), expected_result);

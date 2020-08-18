@@ -77,7 +77,7 @@ const expected_result = {
 // Encontre o primeiro livro cujo nome possui 26 caracteres.
 
 function getNamedBook() {
-  return books.find(elements => elements.name.length === 26);
+  return books.find(book => book.name.length === 26);
 }
 
 assert.deepEqual(getNamedBook(), expected_result);

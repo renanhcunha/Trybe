@@ -72,13 +72,18 @@ function authorUnique() {
   books.forEach(book => {
     const name = book.name;
     const birthYear = book.author.birthYear;
-    notUniqueBirthday = books.some(element => element.name !== name && element.author.birthYear === birthYear);
-    if (notUniqueBirthday) {
-      uniqueBirthday = false;
-    };
+    if (books.some(someBook => someBook.name !== name && someBook.author.birthYear === birthYear)) uniqueBirthday = false;
   });
 
   return uniqueBirthday;
 }
+
+/* ----- Método do Gabarito -----
+function authorUnique() {
+  return books.every((book)=>
+    !books.some((bookSome)=> 
+      (bookSome.author.birthYear === book.author.birthYear) && (bookSome.id !== book.id)
+  ));
+} ------------------------------- */
 
 assert.equal(authorUnique(), expected_result);
