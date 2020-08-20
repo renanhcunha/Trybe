@@ -76,6 +76,4 @@ function allNames() {
   }, 'Nomes:')
 }
 
-console.log(allNames());
-
 assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
