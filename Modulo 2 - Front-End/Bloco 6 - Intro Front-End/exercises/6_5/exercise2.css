@@ -94,6 +94,28 @@ footer h3 {
   }
 
   .aside-container {
-    max-width: 30%;
+    width: 180px;
+  }
+
+  .aside-container aside{
+    max-width: 100%;
+  }
+
+  .container article {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: lightsteelblue;
+  }
+
+  .container {
+    width: 1080px;
+  }
+
+  .aside-container {
+    width: 300px;
   }
 }
