@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Promise of squared numbers</title>
+  </head>
+  <body>
+    <h1>Sum of 10 random squared numbers between 1 to 50!</h1>
+    <h2 id="numbers"></h2>
+    <h2 id="squaredNumbers"></h2>
+    <h2 id="squaredNumbersSum"></h2>
+
+    <script>
+      const getSquaredNumbersSum = () => {
+        let numbers = [];
+
+        for (let index = 0; index < 10; index += 1) {
+          numbers.push(Math.round(Math.random() * 49) + 1);
+        }
+
+        const squaredNumbers = numbers.map(number => number * number);
+        const squaredNumbersSum = squaredNumbers.reduce((acc, number) => acc + number)
+        const numbersInput = document.querySelector('#numbers');
+        const squaredNumbersInput = document.querySelector('#squaredNumbers');
+        const squaredNumbersSumInput = document.querySelector('#squaredNumbersSum');
+
+        numbersInput.innerHTML = `Numbers: ${numbers}`;
+        squaredNumbersInput.innerHTML = `Squared Numbers: ${squaredNumbers}`
+        squaredNumbersSumInput.innerHTML = `Sum of Squared Numbers: ${squaredNumbersSum}`
+
+        return squaredNumbersSum;
+      };
+
+      const getNumbersPromise = () => {
+        const promise = new Promise((resolve, reject) => {
+          const squaredSum = getSquaredNumbersSum();
+
+          (squaredSum < 8000) ? resolve(squaredSum) : reject();
+        })
+          .then((sum) => {
+            const dividers = [2,3,5,10];
+            const result = dividers.map(divider => (Math.round((sum / divider) * 100)) / 100);
+            console.log(result);
+            return result;
+          })
+          .then(result => {
+            const dividersSum = result.reduce((acc, element) => acc + element);
+            return (Math.round(dividersSum * 100) / 100);
+          })
+          .then(dividersSum => console.log(dividersSum))
+          .catch(() => console.log("É mais de oito mil! Essa promise deve estar quebrada!"));
+      }
+
+      window.onload = () => {
+        getNumbersPromise();
+      };
+    </script>
+  </body>
+</html>
