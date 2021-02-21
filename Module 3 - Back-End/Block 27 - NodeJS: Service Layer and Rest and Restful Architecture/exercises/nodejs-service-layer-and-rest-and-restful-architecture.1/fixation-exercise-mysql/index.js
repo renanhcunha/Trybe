@@ -13,7 +13,7 @@ app.get('/books', async (req, res) => {
     const id = parseInt(req.query.author_id)
     const booksByAuthor = await getBooksByAuthor(id)
 
-    if (!booksByAuthor) return res.status(404).json({ message: 'not found!' })
+    if (!booksByAuthor) return res.status(404).json({ message: 'Not found!' })
 
     return res.status(200).json(booksByAuthor)
   }

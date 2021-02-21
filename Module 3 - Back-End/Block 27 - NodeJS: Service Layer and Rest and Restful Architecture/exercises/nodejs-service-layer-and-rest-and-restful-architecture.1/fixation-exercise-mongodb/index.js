@@ -25,7 +25,7 @@ app.get('/books/:id', async (req, res) => {
   const id = req.params.id
   const booksById = await getBooksById(id)
 
-  if (!booksById) return res.status(404).json({ message: 'not found!' })
+  if (!booksById) return res.status(404).json({ message: 'Not found!' })
 
   return res.status(200).json(booksById)
 })
